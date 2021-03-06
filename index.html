@@ -35,11 +35,18 @@
             a:link, a:visited, a:active {
                 background-color: transparent;
 
+                text-align: center;
+                text-decoration: none;
+
                 transition: 0.6s;
             }
 
-            a:hover {
+            a:hover, a:focus {
                 background-color: #E5E9F010;
+            }
+
+            a, a:visited, a:focus, a:active, a:hover{
+                outline:0 none !important;
             }
         </style>
 
