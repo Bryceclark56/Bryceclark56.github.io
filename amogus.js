@@ -25,6 +25,10 @@ function madSus() {
 function notSus() {
     let styles = document.querySelector("style");
     styles.removeChild(styles.lastChild);
+
+    amogus.src = amogus_deadbody;
+    sus_counter = 0;
+    amogus.load();
 }
 
 function amogusKeys(event) {
@@ -39,18 +43,15 @@ function amogusKeys(event) {
             amogus.load();
             madSus();
         }
-        else if (sus_counter === 4) {
-            amogus.src = amogus_deadbody;
-            sus_counter = 0;
-            notSus();
-            console.log("that's sus");
-        }
         else {
+            if (sus_counter > 3) {
+                notSus();
+            }
             console.log("that's sus");
         }
 
         // Force seek to beginning if already playing
-        if (!amogus.paused) amogus.load();
+        if (!amogus.paused) amogus.currentTime = 0;
         amogus.play();
     }
 }
