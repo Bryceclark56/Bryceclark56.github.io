@@ -6,6 +6,27 @@ let amogus;
 let last_3_keys = ["", "", ""];
 let sus_counter = 0;
 
+function madSus() {
+    console.log("that's mad sus, bro");
+
+    let styles = document.querySelector("style");
+    styles.appendChild(document.createTextNode(
+        "#sus:link, #sus:visited, #sus:active { \
+            background-color: rgba(255, 0, 0, .5); \
+            transition: 6s; \
+        } \
+        #sus:hover, #sus:focus { \
+            background-color: rgba(255, 0, 0, 1); \
+            transition: 0.6s; \
+        }"
+    ));
+}
+
+function notSus() {
+    let styles = document.querySelector("style");
+    styles.removeChild(styles.lastChild);
+}
+
 function amogusKeys(event) {
     last_3_keys.shift();
     last_3_keys.push(event.key);
@@ -16,11 +37,12 @@ function amogusKeys(event) {
         if (sus_counter === 3) {
             amogus.src = amogus_drip;
             amogus.load();
-            console.log("that's mad sus, bro");
+            madSus();
         }
         else if (sus_counter === 4) {
             amogus.src = amogus_deadbody;
             sus_counter = 0;
+            notSus();
             console.log("that's sus");
         }
         else {
@@ -39,4 +61,9 @@ window.onload = () => {
     amogus = document.querySelector("#amogus");
 
     document.addEventListener("keypress", amogusKeys);
+    amogus.onended = () => {
+        if (sus_counter === 3) {
+            notSus();
+        }
+    }
 }
