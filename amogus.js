@@ -60,6 +60,7 @@ window.onload = () => {
     console.log("Hexagons are rad!");
 
     amogus = document.querySelector("#amogus");
+    amogus.src = amogus_deadbody;
 
     document.addEventListener("keypress", amogusKeys);
     amogus.onended = () => {
