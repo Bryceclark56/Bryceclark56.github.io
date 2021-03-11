@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(28, 28, 28);
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto repeat(3, 1fr);
+
+    height: 100vh;
+}
+
+#myname {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: xxx-large;
+    color: #ECEFF4;
+    text-align: center;
+
+    grid-column: 1 / 4;
+    margin: 0;
+}
+
+a:link, a:visited, a:active {
+    background-color: transparent;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: 0.6s;
+}
+
+a:hover, a:focus {
+    background-color: #E5E9F010;
+}
+
+a, a:visited, a:focus, a:active, a:hover{
+    outline:0 none !important;
+}
+
+#amogus {
+    display: none;
+}
