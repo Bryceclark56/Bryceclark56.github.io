@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Milk</title>
+    <style>
+        #milkbutton {
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let counter = 0;
+
+        function clickEvent() {
+            counter++;
+            document.getElementById("dacount").innerText = counter;
+        }
+    </script>
+</head>
+<body>
+    <h1>Milk:</h1><div id="dacount">0</div>
+    <button id="milkbutton" onclick="clickEvent()"><img src="images/Milch.png"></button>
+</body>
