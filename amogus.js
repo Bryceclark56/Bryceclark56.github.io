@@ -9,17 +9,18 @@ let sus_counter = 0;
 function madSus() {
     console.log("that's mad sus, bro");
 
-    let styles = document.querySelector("style");
-    styles.appendChild(document.createTextNode(
-        "#sus:link, #sus:visited, #sus:active { \
+    let styles = `#sus:link, #sus:visited, #sus:active { \
             background-color: rgba(255, 0, 0, .5); \
             transition: 6s; \
         } \
         #sus:hover, #sus:focus { \
             background-color: rgba(255, 0, 0, 1); \
             transition: 0.6s; \
-        }"
-    ));
+        }`;
+
+    let styleSheet = document.createElement("style");
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
 }
 
 function notSus() {
@@ -27,7 +28,7 @@ function notSus() {
     styles.removeChild(styles.lastChild);
 
     amogus.src = amogus_deadbody;
-    sus_counter = 0;
+    sus_counter = 1;
     amogus.load();
 }
 
@@ -42,8 +43,7 @@ function amogusKeys(event) {
             amogus.src = amogus_drip;
             amogus.load();
             madSus();
-        }
-        else {
+        } else {
             if (sus_counter > 3) {
                 notSus();
             }
