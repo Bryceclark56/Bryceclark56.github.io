@@ -6,28 +6,33 @@ let amogus;
 let last_3_keys = ["", "", ""];
 let sus_counter = 0;
 
+// I think you're the imposter
 function madSus() {
     console.log("that's mad sus, bro");
 
-    let styles = document.querySelector("style");
-    styles.appendChild(document.createTextNode(
-        "#sus:link, #sus:visited, #sus:active { \
-            background-color: rgba(255, 0, 0, .5); \
-            transition: 6s; \
-        } \
-        #sus:hover, #sus:focus { \
-            background-color: rgba(255, 0, 0, 1); \
-            transition: 0.6s; \
-        }"
-    ));
+    let styles = document.querySelector("#awsheet");
+    styles.sheet.insertRule(`
+        #sus:link, #sus:visited, #sus:active {
+            background-color: rgba(255, 0, 0, .5);
+            transition: 6s;
+        }
+    `);
+    styles.sheet.insertRule(`
+        #sus:hover, #sus:focus {
+        background-color: rgba(255, 0, 0, 1);
+        transition: 0.6s;
+    `);
 }
 
+// Reset sus counter and various related items
 function notSus() {
-    let styles = document.querySelector("style");
-    styles.removeChild(styles.lastChild);
+    let styles = document.querySelector("#awsheet");
+    const nrules = styles.sheet.cssRules.length;
+    styles.sheet.removeRule(nrules - 1);
+    styles.sheet.removeRule(nrules - 2);
 
     amogus.src = amogus_deadbody;
-    sus_counter = 0;
+    sus_counter = 1;
     amogus.load();
 }
 
