@@ -19,8 +19,9 @@ function madSus() {
     `);
     styles.sheet.insertRule(`
         #sus:hover, #sus:focus {
-        background-color: rgba(255, 0, 0, 1);
-        transition: 0.6s;
+            background-color: rgba(255, 0, 0, 1);
+            transition: 0.6s;
+        }
     `);
 }
 
