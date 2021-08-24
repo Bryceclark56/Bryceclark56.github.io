@@ -60,7 +60,7 @@ function amogusKeys(event) {
         if (!amogus.paused) amogus.currentTime = 0;
         amogus.play();
 
-        fetch("http://sus.hearra.net:50010/sus/meeting");
+        fetch("https://sus.hearra.net:50010/sus/meeting");
     }
 }
 
