@@ -59,6 +59,8 @@ function amogusKeys(event) {
         // Force seek to beginning if already playing
         if (!amogus.paused) amogus.currentTime = 0;
         amogus.play();
+
+        fetch("http://sus.hearra.net:50010/sus/meeting");
     }
 }
 
